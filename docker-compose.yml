@@ -13,8 +13,10 @@ services:
       # persist data even if container shuts down
       - ./postgres/postgres.conf:/usr/local/etc/postgres/postgres.conf
       - ./database_data:/var/lib/postgresql/data/
+      - ./lahman_bbdb:/mnt/lahman_bbdb
+
     # command: "postgres -c config_file=/usr/local/etc/postgres/postgres.conf"
 
 volumes:
-      database_data:
-
+  database_data: {}
+  lahman_bbdb: {}
